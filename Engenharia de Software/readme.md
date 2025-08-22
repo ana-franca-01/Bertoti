@@ -53,6 +53,14 @@ O livro apresenta três princípios essenciais para guiar organizações de soft
 **questão 3**
 
 tres exemplos de tradeoffs são:
-* **Escabilidade X simplicidade**
-* **SQL X NoSQL**
-* **Otimização de desempenho X Clareza e manutenibilidade**
+* **Escabilidade X simplicidade** :
+  Um código simples é mais rápido e mais fácil de ser codificado, porém ele muito provavelmente não vai funcionar em larga escala. Todavia, um código feiro próprio para uma larga escala e grande número de usuário, muito provavelmnete será mais complexo e vai demorar mais de ser produzido.
+* **SQL X NoSQL** :
+  O SQL é ótimo para dados com muitas relações ele é consistente e muito bem organizado, porém não se torna tão funcional quando aplicado em larga escala, em contra partida o NoSQL se faz muito melhor adaptado em operações em larga escala, mas perde na cosistência e organização de dados.
+* **Otimização de desempenho X Clareza e manutenibilidade** :
+  Um código otimizado pode ser mais rápido, pórem mais cpmplicado de se editar  e se torna um código complexo. Por outro lado um código claro e mais facil de entender e editar na maioria das vezes nao tem o melhor desempeenho que poderia atingir se tornando um código mmais lento
+
+  **questão 4**
+  
+
+  
