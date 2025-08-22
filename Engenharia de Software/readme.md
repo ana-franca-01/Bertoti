@@ -61,6 +61,7 @@ tres exemplos de tradeoffs são:
   Um código otimizado pode ser mais rápido, pórem mais cpmplicado de se editar  e se torna um código complexo. Por outro lado um código claro e mais facil de entender e editar na maioria das vezes nao tem o melhor desempeenho que poderia atingir se tornando um código mmais lento
 
   **questão 4**
+  Anexado no arquivo chamado - UML-AEROPORTO
   
 
   
