@@ -62,6 +62,452 @@ tres exemplos de tradeoffs são:
 
   **questão 4**
   Anexado no arquivo chamado - UML-AEROPORTO
+
+  **questao 5**
+
+package airplane;
+
+public class Passageiro {
+	
+	private String nome;
+	private int rg;
+	
+	public Passageiro(String nome, int rg) {
+		this.nome = nome;
+		this.rg = rg;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome (String nome) {
+		this.nome=nome;
+	}
+	
+	public int getRg() {
+		return rg;
+	}
+	
+	public void setRg (int rg) {
+		this.rg= rg;
+	}
+	
+	@Override
+	public String toString() {
+		return " Nome: " + nome;
+	}
+}
+
+package airplane;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Voo {
+	
+	private String destino;
+	private int tempo;
+	private List<Passageiro> passageiros;
+	
+	
+	public Voo(String destino, int tempo) {
+		this.destino = destino;
+		this.tempo = tempo;
+		this.passageiros= new ArrayList<>();
+	}
+	
+	public Voo() {
+		
+	}
+	
+	
+	public void adicionarPassageiro(Passageiro passageiro) {
+		passageiros.add(passageiro);
+	}
+	
+	public List<Passageiro> buscarPassageiroNome(String nome){
+		List<Passageiro> encontrados = new LinkedList<Passageiro>();
+			for (Passageiro passageiro:passageiros) {
+				if(passageiro.getNome().equals(nome)) encontrados.add(passageiro);
+			}
+			
+			return encontrados;
+	}
+	
+	
+	
+	
+	
+	public List<Passageiro> getPassageiros(){
+		return passageiros;
+	}
+	 
+	public String getDestino() {
+		return destino;
+	}
+	
+	public void setDestino (String 	destino) {
+		this.destino = destino;
+	}
+	
+	public int getTempo() {
+		return tempo;
+	}
+	
+	public void setTempo (int tempo) {
+		this.tempo = tempo;
+	}
+	
+	@Override
+	public String toString() {
+		return " Destino: " + destino + " Tempo: " + tempo +"h"+ " Passageiros: " + passageiros ;
+	}
+	
+
+}
+
+package airplane;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Aviao {
+		
+		private String nome;
+		private Voo voo;
+		private List<Voo> voos = new ArrayList<>();
+		
+		public Aviao (String nome, Voo voo) {
+			this.nome = nome;
+			this.voo = voo;
+		}
+		
+		public String getNome() {			return nome;
+		}		
+		public void setNome (String nome) {
+			this.nome=nome;
+		}
+		
+		
+		public void adicionarVoo(Voo voo) {
+			voos.add(voo);
+		}
+		public List<Voo> buscarVooDestino(String destino){
+			List<Voo> encontrados = new LinkedList<Voo>();
+				for (Voo voo:voos) {
+					if(voo.getDestino().equals(destino)) encontrados.add(voo);
+				}
+				
+				return encontrados;
+		}
+		
+		public Voo getVoo(){
+			return voo;
+		}
+		
+		public void setVoo(Voo voo) {
+			this.voo = voo;
+		}
+		
+		@Override
+		public String toString() {
+			return " Nome: " + nome + voo;
+		}
+		
+		
+
+	}
+
+
+**questao 6**
+
+
+package airplane;
+
+import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
+class teste {
+
+	@Test
+	void test() {
+		
+		Voo voo = new Voo("sjc", 3);
+		voo.adicionarPassageiro(new Passageiro("passageiro1", 123));
+		voo.adicionarPassageiro(new Passageiro("passageiro2", 345));
+		
+		Aviao aviao = new Aviao("aviao1", voo);
+		
+		aviao.adicionarVoo(new Voo("campinas", 2));
+		
+		List<Passageiro> buscaP1 = voo.buscarPassageiroNome("passageiro1");
+		assertEquals(buscaP1.get(0).getRg(), 123);
+		
+		List<Passageiro> buscaP2 = voo.buscarPassageiroNome("passageiro2");
+		assertEquals(buscaP2.get(0).getRg(), 345);
+		
+		List<Voo> buscaV = aviao.buscarVooDestino("campinas");
+		assertEquals(buscaV.get(0).getTempo(), 2);
+
+		
+		
+		
+		System.out.print(aviao);
+		
+	}
+
+}
+
+**questao 7**
+
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package org.example;
+
+public class Livro {
+    private String autor;
+    private String isbn;
+    private String nome;
+
+    public Livro(String autor, String isbn, String nome) {
+        this.autor = autor;
+        this.isbn = isbn;
+        this.nome = nome;
+    }
+
+    public String getAutor() {
+        return this.autor;
+    }
+
+    public String getIsbn() {
+        return this.isbn;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+}
+
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package org.example;
+
+public class Usuario {
+    private String nome;
+    private int ra;
+
+    public Usuario(String nome, int ra) {
+        this.nome = nome;
+        this.ra = ra;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getRa() {
+        return this.ra;
+    }
+
+    public void setRa(int ra) {
+        this.ra = ra;
+    }
+}
+
+package org.example;
+
+import org.example.Database;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Biblioteca {
+
+    // Adicionar usuário ao banco
+    public void adicionarUsuario(Usuario usuario) {
+        String sql = "INSERT INTO Usuario(nome, ra) VALUES(?,?)";
+        try (Connection conn = Database.conectar();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, usuario.getNome());
+            pstmt.setInt(2, usuario.getRa());
+            pstmt.executeUpdate();
+            System.out.println("Usuário adicionado com sucesso!");
+        } catch (SQLException e) {
+            System.out.println("Erro ao adicionar usuário: " + e.getMessage());
+        }
+    }
+
+    // Adicionar livro ao banco
+    public void adicionarLivro(Livro livro) {
+        String sql = "INSERT INTO Livro(nome, isbn, autor) VALUES(?, ?, ?)";
+        try (Connection conn = Database.conectar();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, livro.getNome());
+            pstmt.setString(2, livro.getIsbn());
+            pstmt.setString(3, livro.getAutor());
+            pstmt.executeUpdate();
+            System.out.println("Livro adicionado com sucesso!");
+        } catch (SQLException e) {
+            System.out.println("Erro ao adicionar livro: " + e.getMessage());
+        }
+    }
+
+    // Buscar usuário por nome
+    public List<Usuario> buscarUsuarioNome(String nome) {
+        List<Usuario> encontrados = new ArrayList<>();
+        String sql = "SELECT * FROM Usuario WHERE nome = ?";
+        try (Connection conn = Database.conectar();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, nome);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Usuario u = new Usuario(rs.getString("nome"), rs.getInt("ra"));
+                encontrados.add(u);
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro ao buscar usuário: " + e.getMessage());
+        }
+        return encontrados;
+    }
+
+    // Buscar livro por ISBN
+    public Livro buscarLivro(String isbn) {
+        String sql = "SELECT * FROM Livro WHERE isbn = ?";
+        try (Connection conn = Database.conectar();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, isbn);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return new Livro(rs.getString("autor"), rs.getString("isbn"), rs.getString("nome"));
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro ao buscar livro: " + e.getMessage());
+        }
+        return null;
+    }
+}
+
+package org.example;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Database {
+    private static final String URL = "jdbc:sqlite:meubanco.db";
+
+    // Conectar ao banco
+    public static Connection conectar() {
+        try {
+            Connection conn = DriverManager.getConnection(URL);
+            criarTabelas(conn); // Cria as tabelas se não existirem
+            return conn;
+        } catch (SQLException e) {
+            return null;
+        }
+    }
+
+    // Criar tabelas
+    private static void criarTabelas(Connection conn) {
+        String sqlUsuario = """
+            CREATE TABLE IF NOT EXISTS Usuario (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                nome TEXT NOT NULL,
+                ra int not null UNIQUE
+            );
+            """;
+
+        String sqlLivro = """
+            CREATE TABLE IF NOT EXISTS Livro (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                nome TEXT NOT NULL,
+                isbn TEXT NOT NULL UNIQUE,
+                autor TEXT NOT NULL
+            );
+            """;
+
+        try (Statement stmt = conn.createStatement()) {
+            stmt.execute(sqlUsuario);
+            stmt.execute(sqlLivro);
+        } catch (SQLException e) {
+            System.out.println("Erro ao criar tabelas: " + e.getMessage());
+        }
+    }
+}
+
+
+package org.example;
+
+import java.util.List;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        Database.conectar();
+
+        Biblioteca biblioteca = new Biblioteca();
+
+        // Criar usuários e livros
+        Usuario usuario1 = new Usuario("Ana", 567);
+        Usuario usuario2 = new Usuario("Carlos", 789);
+
+        Livro livro1 = new Livro("Aprendendo Java", "000000", "titulo1");
+        Livro livro2 = new Livro("SQLite na Prática", "76543", "titulo2");
+
+        // Adicionar ao banco
+        biblioteca.adicionarUsuario(usuario1);
+        biblioteca.adicionarUsuario(usuario2);
+        biblioteca.adicionarLivro(livro1);
+        biblioteca.adicionarLivro(livro2);
+
+        // Buscar usuário
+        List<Usuario> encontrados = biblioteca.buscarUsuarioNome("Ana");
+        System.out.println("Usuários encontrados:");
+        for (Usuario u : encontrados) {
+            System.out.println("- " + u.getNome() + u.getRa());
+        }
+
+        // Buscar livro
+        Livro livroBuscado = biblioteca.buscarLivro("123456");
+        if (livroBuscado != null) {
+            System.out.println("Livro encontrado: " + livroBuscado.getNome());
+        } else {
+            System.out.println("Livro não encontrado!");
+        }
+
+    }
+
+}
+
   
 
   
