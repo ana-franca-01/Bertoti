@@ -13,11 +13,11 @@ more integrated into our lives, we must adopt and rely on more rigorous engineer
 software practices.
 
 **comentário**
-1- Software engineering vai além de apenas programar. Enquanto muitos estudantes de Ciência da Computação acabam atuando como programadores, o termo “engenharia 
-de software” transmite a ideia de aplicar conhecimentos teóricos para criar algo concreto, mesmo que menos tangível que obras da engenharia civil ou mecânica.
-Diferente dessas áreas, que seguem normas rigorosas para evitar erros críticos, o desenvolvimento de software historicamente não adotou práticas tão estruturadas.
-No entanto, com a crescente presença da tecnologia no cotidiano, torna-se essencial aplicar métodos mais rigorosos para garantir confiabilidade. É nesse contexto
-que o Google traz uma visão própria, baseada em sua experiência, para contribuir com práticas mais sólidas na área.
+1-Engenharia de software vai além de só programar. Embora muitos de nós de C.C. viremos programadores, o termo "engenharia" sugere aplicar teoria para criar algo real. O detalhe é que, diferente da engenharia civil, nosso "real" é menos tangível; software é feito de lógica e dados, não de tijolos.
+
+Historicamente, talvez por ser assim mais "abstrato", o desenvolvimento de software não teve o mesmo rigor que outras engenharias, onde um erro de cálculo pode causar um dano físico grave.
+
+Contudo, como hoje tudo depende de tecnologia, aplicar métodos mais rigorosos se tornou essencial para garantir a confiabilidade. É nesse ponto que a experiência prática de empresas como o Google entra, ajudando a definir práticas melhores para a área.
 
 **texto 2**
  
@@ -39,16 +39,15 @@ Trade-offs and Costs
 How an organization makes decisions, based on the lessons of Time and Change and Scale and Growth
 
 **comentário**
-2- Engenharia de software envolve mais do que escrever código — inclui também as ferramentas e processos usados para criar e manter esse código ao longo do tempo.
-O desafio é definir práticas que mantenham o código útil e sustentável durante todo o seu ciclo de vida, desde a concepção até a descontinuação. O Google, com sua 
-experiência de duas décadas, propõe que engenharia de software seja vista como “programação integrada ao longo do tempo”, destacando a importância de preparar o 
-código para mudanças inevitáveis.
+2-Engenharia de software envolve mais do que escrever código — inclui também as ferramentas e processos usados para criar e manter esse código ao longo do tempo. O desafio é definir práticas que mantenham o código útil e sustentável durante todo o seu ciclo de vida, desde a concepção até a descontinuação. O Google, com sua experiência de duas décadas, propõe que engenharia de software seja vista como “programação integrada ao longo do tempo”, destacando a importância de preparar o código para mudanças inevitáveis.
 
 O livro apresenta três princípios essenciais para guiar organizações de software:
 
-* **Tempo e Mudança** – como o código deve se adaptar ao longo de sua vida útil.
-* **Escala e Crescimento** – como a organização precisa evoluir à medida que se expande.
-* **Compensações e Custos** – como tomar decisões equilibradas considerando os dois princípios anteriores.
+Tempo e Mudança – como o código deve se adaptar ao longo de sua vida útil.
+
+Escala e Crescimento – como a organização precisa evoluir à medida que se expande. Isso não se aplica apenas à equipe, mas também à arquitetura do próprio software, que deve ser capaz de escalar para atender com eficiência tanto a um único usuário quanto a um milhão de usuários simultaneamente.
+
+Compensações e Custos – como tomar decisões equilibradas considerando os dois princípios anteriores.
 
 **questão 3**
 
@@ -56,7 +55,7 @@ tres exemplos de tradeoffs são:
 * **Escabilidade X simplicidade** :
   Um código simples é mais rápido e mais fácil de ser codificado, porém ele muito provavelmente não vai funcionar em larga escala. Todavia, um código feiro próprio para uma larga escala e grande número de usuário, muito provavelmnete será mais complexo e vai demorar mais de ser produzido.
 * **SQL X NoSQL** :
-  O SQL é ótimo para dados com muitas relações ele é consistente e muito bem organizado, porém não se torna tão funcional quando aplicado em larga escala, em contra partida o NoSQL se faz muito melhor adaptado em operações em larga escala, mas perde na cosistência e organização de dados.
+    O SQL é ótimo para dados com muitas relações, ele é consistente e muito bem organizado (ex: **um sistema bancário**), porém não se torna tão funcional quando aplicado em larga escala. Em contrapartida, o NoSQL se faz muito melhor adaptado em operações em larga escala (ex: **o feed do Instagram**), mas perde na consistência imediata e na organização rigorosa dos dados, fazendo um trade-off em favor da velocidade.
 * **Otimização de desempenho X Clareza e manutenibilidade** :
   Um código otimizado pode ser mais rápido, pórem mais cpmplicado de se editar  e se torna um código complexo. Por outro lado um código claro e mais facil de entender e editar na maioria das vezes nao tem o melhor desempeenho que poderia atingir se tornando um código mmais lento
 
