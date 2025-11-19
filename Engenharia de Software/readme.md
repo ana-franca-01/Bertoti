@@ -64,202 +64,241 @@ tres exemplos de tradeoffs são:
 
   **questao 5**
 
-package airplane;
+package org.example;
 
 public class Passageiro {
-	
-	private String nome;
-	private int rg;
-	
-	public Passageiro(String nome, int rg) {
-		this.nome = nome;
-		this.rg = rg;
-	}
-	
-	public String getNome() {
-		return nome;
-	}
-	
-	public void setNome (String nome) {
-		this.nome=nome;
-	}
-	
-	public int getRg() {
-		return rg;
-	}
-	
-	public void setRg (int rg) {
-		this.rg= rg;
-	}
-	
-	@Override
-	public String toString() {
-		return " Nome: " + nome;
-	}
+    private String nome;
+    private int rg;
+
+    public Passageiro(String nome, int rg) {
+        this.nome = nome;
+        this.rg = rg;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public int getRg() {
+        return rg;
+    }
+    public void setRg(int rg) {
+        this.rg = rg;
+    }
+    @Override
+    public String toString() {
+        return " Nome: " + nome;
+    }
 }
 
-package airplane;
+
+package org.example;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Voo {
-	
-	private String destino;
-	private int tempo;
-	private List<Passageiro> passageiros;
-	
-	
-	public Voo(String destino, int tempo) {
-		this.destino = destino;
-		this.tempo = tempo;
-		this.passageiros= new ArrayList<>();
-	}
-	
-	public Voo() {
-		
-	}
-	
-	
-	public void adicionarPassageiro(Passageiro passageiro) {
-		passageiros.add(passageiro);
-	}
-	
-	public List<Passageiro> buscarPassageiroNome(String nome){
-		List<Passageiro> encontrados = new LinkedList<Passageiro>();
-			for (Passageiro passageiro:passageiros) {
-				if(passageiro.getNome().equals(nome)) encontrados.add(passageiro);
-			}
-			
-			return encontrados;
-	}
-	
-	
-	
-	
-	
-	public List<Passageiro> getPassageiros(){
-		return passageiros;
-	}
-	 
-	public String getDestino() {
-		return destino;
-	}
-	
-	public void setDestino (String 	destino) {
-		this.destino = destino;
-	}
-	
-	public int getTempo() {
-		return tempo;
-	}
-	
-	public void setTempo (int tempo) {
-		this.tempo = tempo;
-	}
-	
-	@Override
-	public String toString() {
-		return " Destino: " + destino + " Tempo: " + tempo +"h"+ " Passageiros: " + passageiros ;
-	}
-	
+    private String destino;
+    private int tempo;
+    private int codigo;
+    private List<Passageiro> passageiros;
 
+
+    public Voo(String destino, int tempo, int codigo) {
+        this.destino = destino;
+        this.tempo = tempo;
+        this.codigo = codigo;
+        this.passageiros= new ArrayList<>();
+    }
+
+    public void addPassageiro(Passageiro passageiro) {
+        passageiros.add(passageiro);
+    }
+
+    public List<Passageiro> buscarPassageiroNome(String nome){
+        List<Passageiro> nm_encontrados = new LinkedList<Passageiro>();
+        for (Passageiro passageiro:passageiros) {
+            if(passageiro.getNome().equals(nome)) nm_encontrados.add(passageiro);
+        }
+
+        return nm_encontrados;
+    }
+
+    public List<Passageiro> buscarPassageiroRg(int rg) {
+        List<Passageiro> rg_encontrados = new LinkedList<Passageiro>();
+        for (Passageiro passageiro : passageiros) {
+            if (passageiro.getRg() == rg) {
+                rg_encontrados.add(passageiro);
+            }
+        }
+        return rg_encontrados;
+    }
+
+
+
+
+
+    public List<Passageiro> getPassageiros(){
+        return passageiros;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public void setDestino (String 	destino) {
+        this.destino = destino;
+    }
+
+    public int getTempo() {
+        return tempo;
+    }
+
+    public void setTempo (int tempo) {
+        this.tempo = tempo;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+    public void setCodigo (int codigo) {
+        this.codigo = codigo;
+    }
+
+    @Override
+    public String toString() {
+        return " Destino: " + destino + " Tempo: " + tempo +" horas "+ " Código: " + codigo + " Passageiros: " + passageiros ;
+    }
 }
 
-package airplane;
+package org.example;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Aviao {
-		
-		private String nome;
-		private Voo voo;
-		private List<Voo> voos = new ArrayList<>();
-		
-		public Aviao (String nome, Voo voo) {
-			this.nome = nome;
-			this.voo = voo;
-		}
-		
-		public String getNome() {			return nome;
-		}		
-		public void setNome (String nome) {
-			this.nome=nome;
-		}
-		
-		
-		public void adicionarVoo(Voo voo) {
-			voos.add(voo);
-		}
-		public List<Voo> buscarVooDestino(String destino){
-			List<Voo> encontrados = new LinkedList<Voo>();
-				for (Voo voo:voos) {
-					if(voo.getDestino().equals(destino)) encontrados.add(voo);
-				}
-				
-				return encontrados;
-		}
-		
-		public Voo getVoo(){
-			return voo;
-		}
-		
-		public void setVoo(Voo voo) {
-			this.voo = voo;
-		}
-		
-		@Override
-		public String toString() {
-			return " Nome: " + nome + voo;
-		}
-		
-		
+public class Aeroporto {
+    private List<Voo> voos;
+    private String nome;
 
-	}
+    public Aeroporto(String nome) {
+        this.voos = new ArrayList<>();
+        this.nome = nome;
+    }
+    public List<Voo> getVoos() {
+        return voos;
+    }
+    public void addVoo(Voo voo) {
+        voos.add(voo);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+    public List<Voo> buscarVooCodigo(int codigo) {
+        List<Voo> cod_encontrados = new LinkedList<Voo>();
+        for (Voo voo : voos) {
+            if (voo.getCodigo() == codigo) {
+                cod_encontrados.add(voo);
+            }
+        }
+        return cod_encontrados;
+    }
+
+    public List<Voo> buscarVooDestino(String destino){
+        List<Voo> dest_encontrados = new LinkedList<Voo>();
+        for (Voo voo:voos) {
+            if(voo.getDestino().equals(destino)) dest_encontrados.add(voo);
+        }
+
+        return dest_encontrados;
+    }
+    @Override
+    public String toString() {
+        return " Voo: " + voos;
+    }
+}
 
 
 **questao 6**
 
 
-package airplane;
+package org.example;
 
-import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+public class Main {
+    public static void main(String[] args) {
 
-class teste {
+        Aeroporto aeroporto = new Aeroporto("guarulhos");
 
-	@Test
-	void test() {
-		
-		Voo voo = new Voo("sjc", 3);
-		voo.adicionarPassageiro(new Passageiro("passageiro1", 123));
-		voo.adicionarPassageiro(new Passageiro("passageiro2", 345));
-		
-		Aviao aviao = new Aviao("aviao1", voo);
-		
-		aviao.adicionarVoo(new Voo("campinas", 2));
-		
-		List<Passageiro> buscaP1 = voo.buscarPassageiroNome("passageiro1");
-		assertEquals(buscaP1.get(0).getRg(), 123);
-		
-		List<Passageiro> buscaP2 = voo.buscarPassageiroNome("passageiro2");
-		assertEquals(buscaP2.get(0).getRg(), 345);
-		
-		List<Voo> buscaV = aviao.buscarVooDestino("campinas");
-		assertEquals(buscaV.get(0).getTempo(), 2);
+        Voo vooSjc = new Voo("sjc", 3, 6);
+        vooSjc.addPassageiro(new Passageiro("passageiro1", 123));
+        vooSjc.addPassageiro(new Passageiro("passageiro2", 345));
 
-		
-		
-		
-		System.out.print(aviao);
-		
-	}
+        Voo vooSp= new Voo("sp", 4, 999);
+        vooSp.addPassageiro(new Passageiro("passageiro3", 000));
+        vooSp.addPassageiro(new Passageiro("passageiro4", 111));
 
+        Voo vooAju= new Voo("aju", 4, 456);
+        vooAju.addPassageiro(new Passageiro("passageiro5", 222));
+        vooAju.addPassageiro(new Passageiro("passageiro6", 333));
+
+        aeroporto.addVoo(vooSjc);
+        aeroporto.addVoo(vooSp);
+        aeroporto.addVoo(vooAju);
+
+        System.out.println(aeroporto);
+
+        System.out.println("\nBUSCANDO Voos com destino 'sp'...");
+        List<Voo> voosParaSpEncontrados = aeroporto.buscarVooDestino("sp");
+
+        if (voosParaSpEncontrados.isEmpty()) {
+            System.out.println("Nenhum voo encontrado para 'sp'.");
+        } else {
+            System.out.println("Resultado: " + voosParaSpEncontrados);
+        }
+
+        System.out.println("\nBUSCANDO Voo com código 456 (era 123)...");
+        List<Voo> vooPorCodigo = aeroporto.buscarVooCodigo(456);
+
+        if (vooPorCodigo.isEmpty()) {
+            System.out.println("Nenhum voo encontrado com código 456.");
+        } else {
+            System.out.println("Resultado: " + vooPorCodigo);
+        }
+
+        System.out.println("\nBUSCANDO Passageiro 'passageiro3' no voo para 'sp'...");
+
+        Voo vooSpEncontrado = voosParaSpEncontrados.get(0);
+
+        List<Passageiro> passageirosNoVooSp = vooSpEncontrado.buscarPassageiroNome("passageiro3");
+
+        if (passageirosNoVooSp.isEmpty()) {
+            System.out.println("não tem passageiro com esse nome");
+        } else {
+            System.out.println("Resultado: " + passageirosNoVooSp);
+        }
+
+        System.out.println("\nBUSCANDO Passageiro com RG 333 no voo para 'aju' (cód 456)...");
+
+        Voo vooAjuEncontrado = vooPorCodigo.get(0);
+        List<Passageiro> passageiroRg333 = vooAjuEncontrado.buscarPassageiroRg(333);
+
+        if (passageiroRg333.isEmpty()) {
+            System.out.println("Nenhum passageiro com RG 333 encontrado.");
+        } else {
+            System.out.println("Resultado: " + passageiroRg333);
+        }
+    }
 }
 
 **questao 7**
