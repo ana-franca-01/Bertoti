@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Carros</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #cce7ff; /* azul claro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Caixa principal */
+        .container {
+            background-color: #fff4b3; /* amarelo pastel */
+            padding: 30px;
+            border-radius: 20px;
+            width: 420px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: black;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #001f3f; /* azul marinho */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* Lista */
+        #lista div {
+            background: white;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Cadastro de Carros </h1>
+
+    <!-- Criar carro -->
+    <input type="text" id="id" placeholder="ID">
+    <input type="text" id="name" placeholder="Nome">
+    <button onclick="criarCarro()">Salvar</button>
+
+    <br><br>
+
+    <!-- Buscar -->
+    <input type="text" id="buscarId" placeholder="Buscar por ID">
+    <button onclick="buscarCarro()">Buscar</button>
+    <button onclick="carregarCarros()">Mostrar todos</button>
+
+    <p id="resultado"></p>
+
+    <br><br>
+
+
+    <!-- Lista -->
+    <div id="lista"></div>
+
+</div>
+
+<script>
+    const URL = "http://localhost:8080/carros";
+
+    // LISTAR TODOS
+    function carregarCarros() {
+      fetch(URL)
+        .then(res => res.json())
+        .then(data => {
+          const lista = document.getElementById("lista");
+          lista.innerHTML = "";
+
+          data.forEach(carro => {
+            lista.innerHTML += `
+              <div>
+                ID: ${carro.id} | Nome: ${carro.name}
+                <br>
+                <button onclick="editarCarro('${carro.id}', '${carro.name}')">Editar</button>
+                <button onclick="deletarCarro('${carro.id}')">Deletar</button>
+              </div>
+            `;
+          });
+        });
+    }
+
+    // BUSCAR POR ID
+    function buscarCarro() {
+      const id = document.getElementById("buscarId").value;
+
+      fetch(`${URL}/${id}`)
+        .then(res => res.json())
+        .then(carro => {
+          const lista = document.getElementById("lista");
+          lista.innerHTML = `
+            <div>
+              ID: ${carro.id} | Nome: ${carro.name}
+            </div>
+          `;
+        })
+        .catch(() => alert("Não encontrado 😢"));
+    }
+
+    // EDITAR
+    let modoEdicao = false;
+
+function editarCarro(id, name) {
+  document.getElementById("id").value = id;
+  document.getElementById("name").value = name;
+  modoEdicao = true;
+}
+
+
+    function criarCarro() {
+  const id = document.getElementById("id").value;
+  const name = document.getElementById("name").value;
+
+  const metodo = modoEdicao ? "PUT" : "POST";
+  const urlFinal = modoEdicao ? `${URL}/${id}` : URL;
+
+  fetch(urlFinal, {
+    method: metodo,
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ id, name })
+  })
+  .then(() => {
+    alert(modoEdicao ? "Atualizado!" : "Carro criado!");
+
+    modoEdicao = false;
+    document.getElementById("id").value = "";
+    document.getElementById("name").value = "";
+
+    carregarCarros();
+  });
+}
+
+    // DELETAR
+    function deletarCarro(id) {
+      fetch(`${URL}/${id}`, {
+        method: "DELETE"
+      })
+      .then(() => {
+        alert("Carro deletado!");
+        carregarCarros();
+      });
+    }
+</script>
+
+</body>
+</html>
