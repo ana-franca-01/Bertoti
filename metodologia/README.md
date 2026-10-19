@@ -34,7 +34,7 @@ Durante a graduação, participei de projetos acadêmicos com empresas parceiras
 | Formação | Instituição | Período |
 | -------- | ----------- | ------- |
 | Tecnologia em Banco de Dados (superior) | FATEC São José dos Campos | Desde 2025 |
-| Técnico em Desenvolvimento de Sistemas | ETEC Ilza Nascimento Pintus | De 02.23 ate 07.24|
+| Técnico em Desenvolvimento de Sistemas | ETEC Ilza Nascimento Pintus | De 02.23 até 07.24|
 
 ---
 
