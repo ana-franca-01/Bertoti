@@ -34,11 +34,11 @@ Durante a graduação, participei de projetos acadêmicos com empresas parceiras
 | Formação | Instituição | Período |
 | -------- | ----------- | ------- |
 | Tecnologia em Banco de Dados (superior) | FATEC São José dos Campos | Desde 2025 |
-| Técnico em Desenvolvimento de Sistemas | — | Concluído |
+| Técnico em Desenvolvimento de Sistemas | ETEC Ilza Nascimento Pintus | Concluído |
 
 ---
 
-## 📂 Projetos
+## Projetos
 
 Os dois projetos abaixo fazem parte da disciplina de Aprendizagem por Projetos Integrados (API) do curso, desenvolvidos em equipe com metodologia Scrum.
 
