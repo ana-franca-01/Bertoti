@@ -9,17 +9,17 @@
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ana-franca-01)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ana-leticia-fran%C3%A7a-558387314/)
 
-[👩‍💻 Sobre mim](#sobre-mim) |
-[🎓 Formação](#formação) |
-[📂 Projetos](#projetos) |
-[💻 Tecnologias](#tecnologias) |
-[🤝 Contribuições](#contribuições)
+[Sobre mim](#sobre-mim) |
+[Formação](#formação) |
+[Projetos](#projetos) |
+[Tecnologias](#tecnologias) |
+[Contribuições](#contribuições)
 
 </div>
 
 ---
 
-## 👩‍💻 Sobre mim
+## Sobre mim
 
 Meu interesse pela área de tecnologia surgiu da curiosidade em entender como os sistemas funcionam e como a programação pode ser utilizada para solucionar problemas do dia a dia. Ao longo da minha trajetória acadêmica, fui desenvolvendo cada vez mais interesse pelo desenvolvimento de software e pelo gerenciamento de bancos de dados, buscando constantemente ampliar meus conhecimentos e colocar na prática o que aprendo.
 
@@ -29,7 +29,7 @@ Durante a graduação, participei de projetos acadêmicos com empresas parceiras
 
 ---
 
-## 🎓 Formação
+## Formação
 
 | Formação | Instituição | Período |
 | -------- | ----------- | ------- |
@@ -49,20 +49,20 @@ Os dois projetos abaixo fazem parte da disciplina de Aprendizagem por Projetos I
 
 ---
 
-### 💬 Projeto 1 — Sambold · Correção de TGs (2025.2)
+###  Projeto 1 — Sambold · Correção de TGs (2025.2)
 
 > **Papel:** Desenvolvedora, time de Front-end
 > **Repositórios:** [SAMBOLD-API/API-2025-2SEM](https://github.com/SAMBOLD-API/API-2025-2SEM) · [Minha fork](https://github.com/danieldanka/API-2025-2SEM)
 
-#### 🎯 Desafio
+#### Desafio
 
 Desenvolver uma aplicação Java para a **correção de TGs**. A aplicação deve permitir a comunicação entre orientador e orientando, otimizando o envio de perguntas pelo aluno e o feedback do professor, com **histórico de mensagens** acessível às duas partes. Também deve disponibilizar materiais auxiliares (modelo e manual do TG) ao aluno.
 
-#### ✅ Proposta de Solução
+#### Proposta de Solução
 
 A Sambold permite que o usuário se cadastre e faça login, escolha o professor pelo qual deseja ser orientado e inicie um chat com ele para receber ajuda na realização do TG. O chat fica disponível para ambas as partes, servindo como histórico. O manual e o modelo de TG ficam acessíveis dentro do próprio software.
 
-#### 📌 Cronograma das Sprints
+#### Cronograma das Sprints
 
 | Sprint | Período | Entregas |
 | ------ | ------- | -------- |
@@ -70,7 +70,7 @@ A Sambold permite que o usuário se cadastre e faça login, escolha o professor 
 | Sprint 2 | 06/10 – 26/10/2025 | Enviar/receber pedido de orientação, chat entre orientador e orientando, histórico de mensagens e do TG, adicionar orientador |
 | Sprint 3 | 03/11 – 23/11/2025 | Cadastro e login, armazenamento de documentos, alteração de dados de cadastro, notificação de resposta ao pedido de orientação |
 
-#### 🖥️ Telas e funcionalidades em que atuei
+#### Telas e funcionalidades em que atuei
 
 Participei do desenvolvimento do front-end de todas as telas e funcionalidades do sistema:
 
@@ -85,7 +85,7 @@ Participei do desenvolvimento do front-end de todas as telas e funcionalidades d
 - Armazenamento e envio de documentos
 - Acesso aos materiais de apoio (manual e modelo de TG)
 
-#### 💻 Tecnologias do projeto
+#### Tecnologias do projeto
 
 ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Maven](https://img.shields.io/badge/Apache_Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)
@@ -100,20 +100,20 @@ Participei do desenvolvimento do front-end de todas as telas e funcionalidades d
 
 ---
 
-### 🚗 Projeto 2 — SquadTech · IPEM Control (2026.1)
+### Projeto 2 — SquadTech · IPEM Control (2026.1)
 
 > **Papel:** Product Owner
 > **Repositório:** [SquadTech-API/API-3](https://github.com/SquadTech-API/API-3)
 
-#### 🎯 Desafio
+#### Desafio
 
 Em parceria com o IPEM, regional de São José dos Campos, o desafio foi criar um **Sistema de Controle e Análise de Abastecimento das Viaturas**. O controle era feito de forma manual: os condutores registravam quilometragem, quantidade de combustível, valor abastecido e identificação em pranchetas físicas dentro de cada veículo. O Diretor da unidade precisava reunir as anotações, conferi-las uma a uma e consolidar os dados para inserção no sistema SGI. Esse fluxo dificultava análises comparativas entre viaturas, o acompanhamento do consumo médio e a identificação de inconsistências.
 
-#### ✅ Objetivo
+#### Objetivo
 
 Desenvolver um sistema web que permita o **registro digital dos abastecimentos** pelos condutores, a **validação gerencial** das informações e a **geração de relatórios analíticos**, organizando os dados de forma estruturada e facilitando a consolidação mensal.
 
-#### 📌 Cronograma das Sprints
+#### Cronograma das Sprints
 
 | Sprint | Período | Entrega |
 | ------ | ------- | ------- |
@@ -122,7 +122,7 @@ Desenvolver um sistema web que permita o **registro digital dos abastecimentos**
 | Sprint 3 | 11/05 – 31/05 | Aplicação completa |
 | Feira de Soluções | 11/06/2026 | Apresentação final |
 
-#### 🧭 O que fiz como Product Owner
+#### O que fiz como Product Owner
 
 - Construção e priorização do **Backlog do Produto**
 - Escrita das **User Stories** e dos **Critérios de Aceitação**
@@ -131,7 +131,7 @@ Desenvolver um sistema web que permita o **registro digital dos abastecimentos**
 - Apresentação e validação das entregas nas Sprint Reviews
 - Elaboração do **Manual do Usuário**
 
-#### 💻 Tecnologias do projeto
+#### Tecnologias do projeto
 
 ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
@@ -145,7 +145,7 @@ Desenvolver um sistema web que permita o **registro digital dos abastecimentos**
 
 ---
 
-## 💻 Tecnologias
+## Tecnologias
 
 **Front-end:** Figma, HTML5, CSS3, JavaScript, JavaFX
 **Back-end:** Java, Spring Boot, Maven, Postman
@@ -154,7 +154,7 @@ Desenvolver um sistema web que permita o **registro digital dos abastecimentos**
 
 ---
 
-## 🤝 Contribuições
+## Contribuições
 
 | Projeto | Semestre | Papel | Principais contribuições |
 | ------- | -------- | ----- | ------------------------ |
@@ -165,6 +165,6 @@ Desenvolver um sistema web que permita o **registro digital dos abastecimentos**
 
 <div align="center">
 
-📫 Vamos conversar? [LinkedIn](https://www.linkedin.com/in/ana-leticia-fran%C3%A7a-558387314/) · [GitHub](https://github.com/ana-franca-01)
+Vamos conversar? [LinkedIn](https://www.linkedin.com/in/ana-leticia-fran%C3%A7a-558387314/) · [GitHub](https://github.com/ana-franca-01)
 
 </div>
