@@ -1,7 +1,9 @@
 # Padrões de Projeto — Minhas Contribuições
 
 **Aluna:** Ana França (`ana-franca-01`)
+
 **Projeto:** JurisAI, um assistente jurídico feito em equipe
+
 **Repositório do projeto:** https://github.com/joaosantos13/Padroes-De-Projetos
 
 ---
