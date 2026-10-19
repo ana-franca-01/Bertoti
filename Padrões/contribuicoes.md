@@ -1,9 +1,8 @@
 # Padrões de Projeto — Minhas Contribuições
 
-**Autora:** Ana França (`ana-franca-01`)
+**Aluna:** Ana França (`ana-franca-01`)
 **Projeto:** JurisAI, um assistente jurídico feito em equipe
 **Repositório do projeto:** https://github.com/joaosantos13/Padroes-De-Projetos
-**Meu commit principal:** [`6f25488`](https://github.com/joaosantos13/Padroes-De-Projetos/commit/6f254889c4726853610ecc4d105fc0a50dc56063) — *"feat: implementa estado de analise do agente / feat: adiciona integracao com ollama"*
 
 ---
 
